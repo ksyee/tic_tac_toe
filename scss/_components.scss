@@ -1,0 +1,147 @@
+@use './mixin';
+
+body {
+  #backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    &.on {
+      display: block;
+    }
+  }
+  main {
+    .modal {
+      position: fixed;
+      top: 20%;
+      left: 5%;
+      width: 90%;
+      text-align: center;
+      background-color: #ffffff;
+      padding: 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+      display: none;
+      &.on {
+        display: block;
+      }
+      h2 {
+        margin: 8px 0;
+      }
+      form {
+        margin: 8px 0;
+        .input-wrap {
+          label {
+            display: block;
+            margin-bottom: 16px;
+            font-weight: 700;
+          }
+          input {
+            width: 240px;
+            padding: 5.6px;
+            border: 1px solid #cccccc;
+          }
+        }
+        #error-msg {
+          font-size: 12px;
+          color: #ff0000;
+        }
+        .btn-wrap {
+          margin-top: 16px;
+        }
+      }
+      @include mixin.mobile {
+        & {
+          left: calc(50% - 320px);
+          width: 640px;
+        }
+      }
+    }
+    #game-configuration {
+      width: 90%;
+      max-width: 640px;
+      text-align: center;
+      margin: 48px auto;
+      ol {
+        display: flex;
+        li {
+          width: 50%;
+          padding: 16px;
+          margin: 16px;
+          background-color: #f3e3ff;
+          border-radius: 4px;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.26);
+          .player-board {
+            h2 {
+              font-size: 16px;
+              margin: 8px 0;
+            }
+            h3 {
+              font-size: 24px;
+              margin: 8px 0;
+              color: #5e04a8;
+            }
+            .player-symbol {
+              font-size: 32px;
+              font-weight: 700;
+              color: #2f0452;
+              margin: 8px 0;
+            }
+          }
+        }
+      }
+    }
+    #play-game {
+      text-align: center;
+      margin: 32px 0 80px 0;
+      #game-over {
+        width: 90%;
+        max-width: 640px;
+        padding: 16px 32px;
+        margin: 0 auto;
+        color: #ffffff;
+        background-color: #320557;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+        display: none;
+        h2 {
+          font-size: 40px;
+          margin: 8px 0;
+        }
+      }
+      #turn-player {
+        font-weight: 700;
+        color: #320557;
+      }
+      #game-board {
+        display: grid;
+        grid-template-columns: repeat(3, 96px);
+        grid-template-rows: repeat(3, 96px);
+        justify-content: center;
+        gap: 8px;
+        margin: 16px 0;
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 40px;
+          font-weight: 700;
+          background-color: #d7bbf7;
+          border-radius: 2px;
+          &:hover {
+            background-color: #700dcc;
+            cursor: pointer;
+          }
+          &.disabled {
+            color: #ffffff;
+            background-color: #700dcc;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}
