@@ -145,6 +145,10 @@ body main #game-configuration ol li .player-board .player-symbol {
 body main #play-game {
   text-align: center;
   margin: 32px 0 80px 0;
+  display: none;
+}
+body main #play-game.on {
+  display: block;
 }
 body main #play-game #game-over {
   width: 90%;
@@ -161,7 +165,7 @@ body main #play-game #game-over h2 {
   font-size: 40px;
   margin: 8px 0;
 }
-body main #play-game #turn-player {
+body main #play-game #turn-player-name {
   font-weight: 700;
   color: #320557;
 }

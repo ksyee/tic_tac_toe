@@ -107,6 +107,10 @@ body {
     #play-game {
       text-align: center;
       margin: 32px 0 80px 0;
+      display: none;
+      &.on {
+        display: block;
+      }
       #game-over {
         width: 90%;
         max-width: 640px;
@@ -122,7 +126,7 @@ body {
           margin: 8px 0;
         }
       }
-      #turn-player {
+      #turn-player-name {
         font-weight: 700;
         color: #320557;
       }

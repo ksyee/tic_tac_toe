@@ -3,23 +3,27 @@ const backdrop = document.querySelector('#backdrop');
 const form = document.querySelector('form');
 const playerName = document.querySelectorAll('.player-name');
 const errorMsg = document.querySelector('#error-msg');
+const playGame = document.querySelector('#play-game');
+const gameBoard = document.querySelectorAll('#game-board li');
+const turnPlayerName = document.querySelector('#turn-player-name');
 
 const editBtn = document.querySelectorAll('.btn-edit');
 const cancelBtn = document.querySelector('#cancel');
 const inputPlayerName = document.querySelector('input[name="playername"]');
+const startGameBtn = document.querySelector('#btn-start-game');
 const players = [
   {
-    name: 'player1',
+    name: '',
     symbol: 'X',
   },
   {
-    name: 'player2',
+    name: '',
     symbol: 'O',
   },
 ];
 
 let playerIndex = 0;
-
+let turnPlayer = 0;
 
 editBtn.forEach((item, index) => {
   item.addEventListener('click', () => {
@@ -71,4 +75,31 @@ inputPlayerName.addEventListener('focus', () => {
   form.firstElementChild.classList.remove('error');
   errorMsg.textContent = '';
   return;
+});
+
+startGameBtn.addEventListener('click', () => {
+  if (!players[0].name && !players[1].name) {
+    alert('플레이어 이름을 입력해주세요.');
+    return;
+  } else if (!players[0].name || !players[1].name) {
+    alert('플레이어 이름을 모두 입력해주세요.');
+    return;
+  } else {
+    playGame.classList.add('on');
+    turnPlayerName.textContent = players[turnPlayer].name;
+    return;
+  }
+});
+
+gameBoard.forEach(item => {
+  item.addEventListener('click', e => {
+    e.target.textContent = players[turnPlayer].symbol;
+    e.target.classList.add('disabled');
+    if (turnPlayer === 0) {
+      turnPlayer = 1;
+    } else if (turnPlayer === 1) {
+      turnPlayer = 0;
+    }
+    turnPlayerName.textContent = players[turnPlayer].name;
+  });
 });

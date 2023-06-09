@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -48,7 +47,7 @@
             </div>
           </li>
         </ol>
-        <button class="btn">게임 시작</button>
+        <button class="btn" id="btn-start-game">게임 시작</button>
       </section>
 
       <section id="play-game">
@@ -56,7 +55,7 @@
           <h2>You won, <span id="winner-name">PLAYER NAME</span>!</h2>
           <p>새로운 게임을 시작하시려면, '다시 시작'을 눌러주세요.</p>
         </div>
-        <p><span id="turn-player">PLAYER NAME</span>님 차례입니다.</p>
+        <p><span id="turn-player-name">PLAYER NAME</span>님 차례입니다.</p>
         <ol id="game-board">
           <li></li>
           <li></li>
