@@ -89,6 +89,14 @@ body main .modal form .input-wrap input {
   padding: 5.6px;
   border: 1px solid #cccccc;
 }
+body main .modal form .input-wrap.error label {
+  color: #ff0000;
+}
+body main .modal form .input-wrap.error input {
+  color: #ff0000;
+  background-color: #fddbdb;
+  border-color: #ff0000;
+}
 body main .modal form #error-msg {
   font-size: 12px;
   color: #ff0000;

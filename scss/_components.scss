@@ -44,6 +44,16 @@ body {
             padding: 5.6px;
             border: 1px solid #cccccc;
           }
+          &.error {
+            label {
+              color: #ff0000;
+            }
+            input {
+              color: #ff0000;
+              background-color: #fddbdb;
+              border-color: #ff0000;
+            }
+          }
         }
         #error-msg {
           font-size: 12px;
