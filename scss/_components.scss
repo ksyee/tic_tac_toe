@@ -121,14 +121,22 @@ body {
         border-radius: 4px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
         display: none;
+        &.on {
+          display: block;
+        }
         h2 {
           font-size: 40px;
           margin: 8px 0;
         }
       }
-      #turn-player-name {
-        font-weight: 700;
-        color: #320557;
+      #turn-guide {
+        &.hidden {
+          display: none;
+        }
+        #turn-player-name {
+          font-weight: 700;
+          color: #320557;
+        }
       }
       #game-board {
         display: grid;

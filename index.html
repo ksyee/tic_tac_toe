@@ -52,22 +52,22 @@
 
       <section id="play-game">
         <div id="game-over">
-          <h2>You won, <span id="winner-name">PLAYER NAME</span>!</h2>
-          <p>새로운 게임을 시작하시려면, '다시 시작'을 눌러주세요.</p>
+          <h2><span id="winner-name">PLAYER NAME</span>님이 승리했습니다!</h2>
+          <p>새로운 게임을 시작하시려면, '게임 시작'을 눌러주세요.</p>
         </div>
-        <p><span id="turn-player-name">PLAYER NAME</span>님 차례입니다.</p>
+        <p id="turn-guide"><span id="turn-player-name">PLAYER NAME</span>님 차례입니다.</p>
         <ol id="game-board">
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="1"></li>
+          <li data-col="2" data-row="1"></li>
+          <li data-col="3" data-row="1"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="2"></li>
+          <li data-col="2" data-row="2"></li>
+          <li data-col="3" data-row="2"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="3"></li>
+          <li data-col="2" data-row="3"></li>
+          <li data-col="3" data-row="3"></li>
         </ol>
       </section>
     </main>

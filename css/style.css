@@ -161,11 +161,17 @@ body main #play-game #game-over {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   display: none;
 }
+body main #play-game #game-over.on {
+  display: block;
+}
 body main #play-game #game-over h2 {
   font-size: 40px;
   margin: 8px 0;
 }
-body main #play-game #turn-player-name {
+body main #play-game #turn-guide.hidden {
+  display: none;
+}
+body main #play-game #turn-guide #turn-player-name {
   font-weight: 700;
   color: #320557;
 }
